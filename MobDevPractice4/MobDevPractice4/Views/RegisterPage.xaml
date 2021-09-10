@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobDevPractice4.Views.RegisterPage">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+            <Frame 
+                Style="{StaticResource FrameStyle}"
+                Margin="0,0,0,50">
+                <Image Source="logoIcon.png"/>
+            </Frame>
+            <Label 
+                Text="Create Account"
+                FontAttributes="Bold"
+                FontSize="24"
+                HorizontalOptions="Center"/>
+            <Entry 
+                x:Name="NameEntry" 
+                Text="{Binding User.Name}"
+                Style="{StaticResource EmailEntryStyle}"/>
+            <Entry 
+                x:Name="emailEntry"
+                Text="{Binding User.Email}"
+                Style="{StaticResource EmailEntryStyle}"/>
+            <Entry 
+                x:Name="passEntry" 
+                Text="{Binding User.Password}"
+                Placeholder="Password"
+                Style="{StaticResource PassEntryStyle}"/>
+            <Entry 
+                x:Name="confirmPassEntry" 
+                Placeholder="Confirm Password"
+                Text="{Binding User.ConfirmPass}"
+                Style="{StaticResource PassEntryStyle}"/>
+            <Button 
+                x:Name="signUpButton" 
+                Text="Sign Up"
+                Command="{Binding RegisterCommand}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
